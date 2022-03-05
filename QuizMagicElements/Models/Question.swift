@@ -5,8 +5,6 @@
 //  Created by Руслан Штыбаев on 05.03.2022.
 //
 
-import QuartzCore
-
 struct Question {
     let title: String
     let answers: [Answer]
@@ -29,4 +27,17 @@ enum Animal {
     case cat
     case rabbit
     case turtle
+    
+    var definition: String {
+        switch self {
+        case .dog:
+            return "придумай описание для собаки"
+        case .cat:
+            return "придумай описание для кошки"
+        case .rabbit:
+            return "придумай описание для кролика"
+        case .turtle:
+            return "придумай описание для черепахи"
+        }
+    }
 }
