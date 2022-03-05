@@ -56,15 +56,47 @@
 		E867963027D257EA00ADC14D /* QuizMagicElements */ = {
 			isa = PBXGroup;
 			children = (
-				E867963127D257EA00ADC14D /* AppDelegate.swift */,
-				E867963327D257EA00ADC14D /* SceneDelegate.swift */,
-				E867963527D257EA00ADC14D /* ViewController.swift */,
-				E867963727D257EA00ADC14D /* Main.storyboard */,
-				E867963A27D257EB00ADC14D /* Assets.xcassets */,
-				E867963C27D257EB00ADC14D /* LaunchScreen.storyboard */,
-				E867963F27D257EB00ADC14D /* Info.plist */,
+				E867964827D275AE00ADC14D /* App */,
+				E867964527D2755C00ADC14D /* ViewControllers */,
+				E867964627D2757100ADC14D /* Storyboards */,
+				E867964727D2758C00ADC14D /* Resources */,
 			);
 			path = QuizMagicElements;
+			sourceTree = "<group>";
+		};
+		E867964527D2755C00ADC14D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E867963527D257EA00ADC14D /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E867964627D2757100ADC14D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E867963C27D257EB00ADC14D /* LaunchScreen.storyboard */,
+				E867963727D257EA00ADC14D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E867964727D2758C00ADC14D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E867963A27D257EB00ADC14D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E867964827D275AE00ADC14D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E867963F27D257EB00ADC14D /* Info.plist */,
+				E867963327D257EA00ADC14D /* SceneDelegate.swift */,
+				E867963127D257EA00ADC14D /* AppDelegate.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Q7FR5CHKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuizMagicElements/Info.plist;
+				INFOPLIST_FILE = QuizMagicElements/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2Q7FR5CHKB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = QuizMagicElements/Info.plist;
+				INFOPLIST_FILE = QuizMagicElements/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
