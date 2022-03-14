@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizMagicElements" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="QuizMagicElements" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="84"/>
+            <point key="canvasLocation" x="-49" y="82"/>
         </scene>
         <!--Вопрос №-->
         <scene sceneID="3Ji-L7-d3g">
             <objects>
-                <viewController id="x8C-yf-8HZ" sceneMemberID="viewController">
+                <viewController id="x8C-yf-8HZ" customClass="QuestionsViewController" customModule="QuizMagicElements" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOg-sv-wI1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,6 +217,12 @@
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oZ6-IO-vAH">
                                 <rect key="frame" x="0.0" y="91" width="320" height="4"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttc-kN-8q1">
+                                <rect key="frame" x="20" y="100" width="280" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oAA-2W-f2q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,6 +235,8 @@
                                 <variation key="heightClass=compact-widthClass=compact" constant="16"/>
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
+                            <constraint firstItem="Ttc-kN-8q1" firstAttribute="top" secondItem="oZ6-IO-vAH" secondAttribute="bottom" constant="5" id="JCz-Yj-HFR"/>
+                            <constraint firstItem="oAA-2W-f2q" firstAttribute="trailing" secondItem="Ttc-kN-8q1" secondAttribute="trailing" constant="20" id="M6a-Z5-hGM"/>
                             <constraint firstItem="oZ6-IO-vAH" firstAttribute="leading" secondItem="oAA-2W-f2q" secondAttribute="leading" id="SIZ-Fe-NEf"/>
                             <constraint firstItem="6pm-8u-QMo" firstAttribute="leading" secondItem="oAA-2W-f2q" secondAttribute="leading" constant="16" id="eC8-bU-Fpq"/>
                             <constraint firstItem="oZ6-IO-vAH" firstAttribute="top" secondItem="oAA-2W-f2q" secondAttribute="top" id="gUd-Le-Qji"/>
@@ -239,6 +247,7 @@
                             </constraint>
                             <constraint firstItem="M9V-1B-BuO" firstAttribute="leading" secondItem="oAA-2W-f2q" secondAttribute="leading" id="nuF-Vi-hqT"/>
                             <constraint firstItem="oAA-2W-f2q" firstAttribute="trailing" secondItem="6pm-8u-QMo" secondAttribute="trailing" constant="16" id="s7O-ap-NQ9"/>
+                            <constraint firstItem="Ttc-kN-8q1" firstAttribute="leading" secondItem="oAA-2W-f2q" secondAttribute="leading" constant="20" id="wRw-P5-uWV"/>
                             <constraint firstItem="oAA-2W-f2q" firstAttribute="trailing" secondItem="M9V-1B-BuO" secondAttribute="trailing" constant="16" id="yH0-aI-EwI"/>
                         </constraints>
                     </view>
@@ -250,6 +259,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="questionLabel" destination="Ttc-kN-8q1" id="QBf-0w-Eq2"/>
+                        <outlet property="questionProgressView" destination="oZ6-IO-vAH" id="7N6-3L-ofl"/>
+                        <outlet property="singleStackView" destination="1gH-Sw-J8i" id="rGz-EP-VH7"/>
+                        <outletCollection property="singleButtons" destination="Agx-TJ-3Jo" collectionClass="NSMutableArray" id="ygE-se-jim"/>
                         <segue destination="9ee-Jk-brH" kind="show" identifier="showResult" id="rvk-su-zo7"/>
                     </connections>
                 </viewController>
@@ -292,10 +305,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="C09-Ts-T4h">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9hJ-TI-ynL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9hJ-TI-ynL">
+                            <connections>
+                                <segue destination="Xul-1S-gjA" kind="unwind" unwindAction="unwindWithSegue:" id="L3Z-Bq-eTK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-Nq-eiM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Xul-1S-gjA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2359" y="83"/>
         </scene>
