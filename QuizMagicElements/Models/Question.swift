@@ -40,7 +40,7 @@ struct Question {
                     Answer(title: "Ненавижу", animal: .cat),
                     Answer(title: "Нервничаю", animal: .turtle),
                     Answer(title: "Не замечаю", animal: .rabbit),
-                    Answer(title: "Нервничаю", animal: .dog)
+                    Answer(title: "Обожаю", animal: .dog)
                 ]
             )
         ]
