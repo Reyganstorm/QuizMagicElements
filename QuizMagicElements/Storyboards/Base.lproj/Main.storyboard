@@ -291,10 +291,10 @@
                         <outletCollection property="multipleLabels" destination="s6s-NX-OiO" collectionClass="NSMutableArray" id="1Vd-Rx-tJP"/>
                         <outletCollection property="multipleLabels" destination="MIf-HS-vT2" collectionClass="NSMutableArray" id="9ve-nm-z89"/>
                         <outletCollection property="multipleLabels" destination="bzK-Ea-V0e" collectionClass="NSMutableArray" id="rDN-Gj-Le6"/>
-                        <outletCollection property="multipleSwitch" destination="a7I-M3-TK5" collectionClass="NSMutableArray" id="m11-v6-z4v"/>
-                        <outletCollection property="multipleSwitch" destination="rZB-Yk-ctf" collectionClass="NSMutableArray" id="gq8-5e-S8z"/>
-                        <outletCollection property="multipleSwitch" destination="LHc-mw-yg2" collectionClass="NSMutableArray" id="FUC-Qf-Qa5"/>
-                        <outletCollection property="multipleSwitch" destination="7jT-aB-d3V" collectionClass="NSMutableArray" id="ndq-Ao-nFW"/>
+                        <outletCollection property="multipleSwitches" destination="a7I-M3-TK5" collectionClass="NSMutableArray" id="m11-v6-z4v"/>
+                        <outletCollection property="multipleSwitches" destination="rZB-Yk-ctf" collectionClass="NSMutableArray" id="gq8-5e-S8z"/>
+                        <outletCollection property="multipleSwitches" destination="LHc-mw-yg2" collectionClass="NSMutableArray" id="FUC-Qf-Qa5"/>
+                        <outletCollection property="multipleSwitches" destination="7jT-aB-d3V" collectionClass="NSMutableArray" id="ndq-Ao-nFW"/>
                         <outletCollection property="rangeLabels" destination="CWD-GZ-ssc" collectionClass="NSMutableArray" id="yMY-Rb-nWL"/>
                         <outletCollection property="rangeLabels" destination="xkR-iC-XKv" collectionClass="NSMutableArray" id="Jci-6E-uU7"/>
                         <segue destination="9ee-Jk-brH" kind="show" identifier="showResult" id="rvk-su-zo7"/>

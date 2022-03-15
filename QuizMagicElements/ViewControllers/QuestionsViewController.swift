@@ -17,7 +17,7 @@ class QuestionsViewController: UIViewController {
     
     @IBOutlet var multipleStackView: UIStackView!
     @IBOutlet var multipleLabels: [UILabel]!
-    @IBOutlet var multipleSwitch: [UISwitch]!
+    @IBOutlet var multipleSwitches: [UISwitch]!
     
     @IBOutlet var rangeStackView: UIStackView!
     @IBOutlet var rangeLabels: [UILabel]!
@@ -40,7 +40,11 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultVC = segue.destination as? ResultViewController else {return}
+        resultVC.animals = answersChosen
     }
     
     @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
@@ -52,7 +56,7 @@ class QuestionsViewController: UIViewController {
     }
     
     @IBAction func multipleAnswerButtonPressed() {
-        for (multipleSwitch, answer) in zip(multipleSwitch, currentAnswers) {
+        for (multipleSwitch, answer) in zip(multipleSwitches, currentAnswers) {
             if multipleSwitch.isOn {
                 answersChosen.append(answer)
             }
@@ -64,6 +68,7 @@ class QuestionsViewController: UIViewController {
     @IBAction func rangeAnswerButtonPressed() {
         let index = lrintf(rangeSlider.value)
         answersChosen.append(currentAnswers[index])
+        
         nextQuestion()
     }
 }
@@ -96,12 +101,9 @@ extension QuestionsViewController {
     
     private func showCurrentAnswers(for type: ResponceType) {
         switch type {
-        case .single:
-            showSingleStackView(with: currentAnswers)
-        case .miltiple:
-            showMultipleStackView(with: currentAnswers)
-        case .ranges:
-            showRangeStackView(with: currentAnswers)
+        case .single: showSingleStackView(with: currentAnswers)
+        case .miltiple: showMultipleStackView(with: currentAnswers)
+        case .ranges: showRangeStackView(with: currentAnswers)
         }
     }
     
