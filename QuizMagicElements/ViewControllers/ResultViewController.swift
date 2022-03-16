@@ -9,44 +9,39 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    var animals: [Answer] = []
-
-    private var chosen = 2
-    private var dog = 0
-    private var cat = 0
-    private var turttle = 0
-    private var rabbit = 0
+    @IBOutlet var animalLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    
+    var answers: [Answer] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.hidesBackButton = true
     }
 
-}
-
-extension ResultViewController {
-    private func counAnimal(for answers: [Answer]) -> Animal {
-        for answer in answers {
-            switch answer.animal {
-            case .dog:
-               dog += 1
-            case .cat:
-                cat += 1
-            case .rabbit:
-                rabbit += 1
-            case .turtle:
-                turttle += 1
+    private func updateResult() {
+        
+        var colectionOfAnimal: [ Animal : Int ] = [:]
+        let animals = answers.map { $0.animal }
+        
+        for animal in animals {
+            if let animalTypeCount = colectionOfAnimal[animal] {
+                colectionOfAnimal.updateValue(animalTypeCount + 1, forKey: animal)
+            } else {
+                colectionOfAnimal[animal] = 1
             }
         }
-        return chosenAnimal()
+        
+        let sortedColectionAnimal = colectionOfAnimal.sorted { $0.value > $1.value }
+        guard let mostFrequencyAnimal = sortedColectionAnimal.first?.key else {return}
+        
+        updateUI(animal: mostFrequencyAnimal)
     }
     
-    private func chosenAnimal() -> Animal {
-        if chosen == dog {return Animal.dog}
-        else if chosen == cat {return Animal.cat}
-        else if chosen == turttle {return Animal.turtle}
-        else if chosen == rabbit {return Animal.rabbit}
-        return Animal.dog
+    private func updateUI(animal: Animal) {
+        animalLabel.text = "You are \(animal)"
+        titleLabel.text = animal.definition
     }
 }
+
+

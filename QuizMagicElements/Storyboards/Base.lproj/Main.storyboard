@@ -269,13 +269,7 @@
                             <constraint firstItem="oAA-2W-f2q" firstAttribute="trailing" secondItem="M9V-1B-BuO" secondAttribute="trailing" constant="16" id="yH0-aI-EwI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="gvC-ju-pZ1">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="G2X-dZ-sQr">
-                            <connections>
-                                <segue destination="9ee-Jk-brH" kind="show" id="iLp-Wi-7HN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="gvC-ju-pZ1"/>
                     <connections>
                         <outlet property="multipleStackView" destination="6pm-8u-QMo" id="Qaq-C6-88e"/>
                         <outlet property="questionLabel" destination="Ttc-kN-8q1" id="QBf-0w-Eq2"/>
@@ -307,7 +301,7 @@
         <!--Результат-->
         <scene sceneID="fSi-E9-Bcg">
             <objects>
-                <viewController id="9ee-Jk-brH" sceneMemberID="viewController">
+                <viewController id="9ee-Jk-brH" customClass="ResultViewController" customModule="QuizMagicElements" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IZ1-Mp-yCi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -345,6 +339,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalLabel" destination="2ZO-CL-tDi" id="ioF-nk-VW2"/>
+                        <outlet property="titleLabel" destination="G5O-yg-c8N" id="pWw-XP-R92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6T0-Nq-eiM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Xul-1S-gjA" userLabel="Exit" sceneMemberID="exit"/>
@@ -370,9 +368,6 @@
             <point key="canvasLocation" x="811.875" y="82.394366197183103"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rvk-su-zo7"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
